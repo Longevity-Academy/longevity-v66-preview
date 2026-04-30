@@ -7484,14 +7484,133 @@ section.topics .topic-v2-video video {
     Sub:      "Every month you wait, your biology drifts a little further. Start the twelve-session longevity protocol built around your body, your labs, and the life you actually want to live."
     CTA:      "Start My Protocol"
 -->
-<section class="hero" id="hero">
-  <video class="hero-image" autoplay muted loop playsinline preload="auto" poster="assets/hero-cgm.jpg" aria-hidden="true">
-    <source src="assets/skill-cells.mp4" type="video/mp4">
+<!-- v66 hero: V3-style centered cells/orb hero (Decades Ahead Are Yours) -->
+<style>
+  /* Scoped overrides — only affect .hero.hero-v66 */
+  .hero.hero-v66 .hero-image { object-position: center center; filter: saturate(1.1) contrast(1.05) brightness(0.85); }
+  .hero.hero-v66 .hero-overlay {
+    background:
+      radial-gradient(ellipse at 50% 45%, rgba(8, 36, 92, 0.30) 0%, rgba(4, 18, 56, 0.78) 70%, rgba(2, 10, 40, 0.92) 100%),
+      linear-gradient(180deg, rgba(2,10,40,0.45) 0%, rgba(2,10,40,0.55) 100%);
+  }
+  .hero.hero-v66 .hero-inner {
+    text-align: center;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero.hero-v66 .hero-academy-name {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 28px;
+  }
+  .hero.hero-v66 .hero-academy-name .life-blue { color: #7ec8ff; }
+  .hero.hero-v66 .hero-title {
+    text-align: center;
+    font-size: clamp(48px, 7.4vw, 96px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin: 0 auto 28px;
+    max-width: 1000px;
+  }
+  .hero.hero-v66 .hero-title .life-blue { color: #7ec8ff; }
+  .hero.hero-v66 .hero-sub {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.86);
+  }
+  .hero.hero-v66 .hero-cta-row { justify-content: center; margin-bottom: 32px; }
+  .hero.hero-v66 .trustpilot--center {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgba(255,255,255,0.95);
+    font-size: 14px;
+    margin: 0 auto 56px;
+  }
+  .hero.hero-v66 .trustpilot--center .trustpilot-stars {
+    display: inline-flex; gap: 2px;
+    background: #00b67a; padding: 4px 6px; border-radius: 4px;
+  }
+  .hero.hero-v66 .trustpilot--center .trustpilot-star { width: 14px; height: 14px; color: #ffffff; }
+  .hero.hero-v66 .trustpilot--center .trustpilot-star svg { width: 14px; height: 14px; display: block; }
+  .hero.hero-v66 .trustpilot--center .trustpilot-score { font-weight: 700; color: #ffffff; }
+  .hero-v66-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 880px;
+    margin: 0 auto;
+    padding-top: 8px;
+  }
+  .hero-v66-stat { text-align: center; padding: 0 12px; }
+  .hero-v66-stat-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(36px, 4.4vw, 56px);
+    line-height: 1;
+    color: #7ec8ff;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+  .hero-v66-stat-label {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+  }
+  @media (max-width: 760px) {
+    .hero.hero-v66 .hero-academy-name { font-size: 13px; letter-spacing: 0.16em; margin-bottom: 18px; }
+    .hero.hero-v66 .hero-title { font-size: 44px !important; margin-bottom: 20px; }
+    .hero.hero-v66 .hero-sub { font-size: 16px; margin-bottom: 28px; }
+    .hero.hero-v66 .trustpilot--center { margin-bottom: 36px; font-size: 13px; }
+    .hero-v66-stats { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; max-width: 460px; }
+    .hero-v66-stat-num { font-size: 32px; }
+    .hero-v66-stat-label { font-size: 10px; letter-spacing: 0.12em; }
+  }
+</style>
+<section class="hero hero-v66" id="hero">
+  <video class="hero-image" autoplay muted loop playsinline preload="auto" poster="assets/hero-longevity.jpg" aria-hidden="true">
+    <source src="assets/hero-light-bg.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <!-- IIBS-style trust pill ABOVE headline -->
-    <div class="trustpilot trustpilot--top">
+    <div class="hero-academy-name">
+      THE LONGEVITY <span class="life-blue">LIFE</span> ACADEMY
+    </div>
+    <h1 class="hero-title">
+      The Decades Ahead<br>Are <span class="life-blue">Yours.</span>
+    </h1>
+    <p class="hero-sub">
+      A longevity course for adults who refuse to coast into their 60s, 70s and 80s. Walk away with the protocol, the numbers that matter, and the daily practice that make the decades ahead your strongest.
+    </p>
+    <div class="hero-cta-row">
+      <div class="hero-cta-wrap">
+        <div class="hero-cta-glow" aria-hidden="true"></div>
+        <a href="#lead-gen" class="btn-primary btn-primary--lg">
+          Claim Your Seat
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="trustpilot trustpilot--center">
       <div class="trustpilot-stars">
         <span class="trustpilot-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
         <span class="trustpilot-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
@@ -7499,32 +7618,25 @@ section.topics .topic-v2-video video {
         <span class="trustpilot-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
         <span class="trustpilot-star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
       </div>
-      <span><span class="trustpilot-score">4.6 / 5</span> &middot; Trustpilot &middot; 600+ verified reviews</span>
+      <span><span class="trustpilot-score">4.6 / 5</span> on Trustpilot &middot; 600+ reviews</span>
     </div>
-    <div class="hero-academy-name">
-      Longevity <span class="life-blue">Life</span> Academy
-    </div>
-    <h1 class="hero-title">
-      The New Standard<br><span class="life-blue">for Living Well</span>
-    </h1>
-    <p class="hero-sub">
-      Live longer in the body you actually want to live in.
-      A guided protocol built around your biology, your numbers, and the daily practice that turns the next decades into your strongest.
-    </p>
-    <div class="hero-cta-row">
-      <div class="hero-cta-wrap">
-        <div class="hero-cta-glow" aria-hidden="true"></div>
-        <a href="#lead-gen" class="btn-primary btn-primary--lg">
-          Enroll Now
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 5l7 7-7 7"/>
-          </svg>
-        </a>
+    <div class="hero-v66-stats" aria-label="Course at a glance">
+      <div class="hero-v66-stat">
+        <div class="hero-v66-stat-num">25</div>
+        <div class="hero-v66-stat-label">Years Online Learning</div>
       </div>
-      <a href="#syllabus" class="btn-ghost">
-        See the Curriculum
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
+      <div class="hero-v66-stat">
+        <div class="hero-v66-stat-num">18</div>
+        <div class="hero-v66-stat-label">Live Sessions</div>
+      </div>
+      <div class="hero-v66-stat">
+        <div class="hero-v66-stat-num">8&ndash;15</div>
+        <div class="hero-v66-stat-label">Per Cohort</div>
+      </div>
+      <div class="hero-v66-stat">
+        <div class="hero-v66-stat-num">1:1</div>
+        <div class="hero-v66-stat-label">Your Protocol</div>
+      </div>
     </div>
   </div>
 </section>
